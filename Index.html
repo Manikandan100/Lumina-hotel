@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina Hotel - Luxury Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth}
+body{background:#faf7f2;color:#1a1a1a}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 5%;background:#0f1d2e;color:white;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display';font-size:24px;color:#e8c07d;letter-spacing:3px}
+.btn{background:#e8c07d;color:#0f1d2e;padding:11px 22px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');background-size:cover;background-position:center;height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;padding:20px}
+.hero h1{font-family:'Playfair Display';font-size:48px}
+section{padding:60px 5%}
+.title{text-align:center;margin-bottom:30px}.title h2{font-family:'Playfair Display';font-size:34px;color:#0f1d2e}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08)}
+.card img{width:100%;height:210px;object-fit:cover}.info{padding:18px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:200}
+.modal-content{background:white;padding:26px;border-radius:16px;width:90%;max-width:400px}
+.modal-content input,.modal-content select{width:100%;padding:11px;margin:7px 0;border:1px solid #ddd;border-radius:8px}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:54px;height:54px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:26px;text-decoration:none;z-index:99}
+footer{background:#0a1422;color:#8a9bb0;text-align:center;padding:28px}
+</style>
+</head>
+<body>
+<nav><div class="logo">LUMINA</div><button class="btn" onclick="openM()">Book Now</button></nav>
+<div class="hero"><h1>Luxury Beyond Limits</h1><p>Timeless elegance meets modern comfort</p><br><button class="btn" onclick="openM()">Explore Rooms</button></div>
+
+<section id="about"><div class="title"><h2>About Lumina</h2><p>Legacy of Luxury Since 1998</p></div><p style="text-align:center;color:#555;max-width:750px;margin:auto;line-height:1.8">120 luxury rooms, infinity rooftop pool, spa, award-winning dining. 5 mins from beach & city center. ✓ Pool ✓ Spa ✓ 24/7 Concierge</p></section>
+
+<section style="background:#f1ece3"><div class="title"><h2>Rooms & Suites</h2></div><div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32"><div class="info"><h3>Deluxe Suite</h3><p style="color:#666">City View • King Bed</p><b>₹12,500 / night</b><br><br><button class="btn" style="width:100%" onclick="openM()">Book Now</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"><div class="info"><h3>Ocean View</h3><p style="color:#666">Ocean View • Balcony</p><b>₹9,800 / night</b><br><br><button class="btn" style="width:100%" onclick="openM()">Book Now</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"><div class="info"><h3>Garden Cottage</h3><p style="color:#666">Private Garden • 65m²</p><b>₹18,500 / night</b><br><br><button class="btn" style="width:100%" onclick="openM()">Book Now</button></div></div>
+</div></section>
+
+<section><div class="title"><h2>Dining</h2></div><div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"><div class="info"><h3>The Grand Restaurant</h3><p>Multi-cuisine fine dining</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34"><div class="info"><h3>Sky Lounge Bar</h3><p>Rooftop cocktails & sunset</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de"><div class="info"><h3>Beachside Cafe</h3><p>Coffee & light bites</p></div></div>
+</div></section>
+
+<section style="background:white"><div class="title"><h2>Contact</h2></div><p style="text-align:center;line-height:1.8">📍 123, ECR Road, Chennai<br>📞 +91 98765 43210<br>✉️ hello@luminahotel.com</p></section>
+
+<a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
+<div class="modal" id="bookM"><div class="modal-content"><h3>Book Your Stay</h3><input placeholder="Full Name"><input placeholder="Phone"><input type="date"><select><option>Deluxe - ₹12,500</option><option>Ocean - ₹9,800</option><option>Cottage - ₹18,500</option></select><button class="btn" style="width:100%;margin-top:8px" onclick="alert('Booking sent!');closeM()">Confirm</button><button onclick="closeM()" style="width:100%;margin-top:8px;background:none;border:none">Cancel</button></div></div>
+<footer>© 2026 Lumina Hotel • Crafted by Mani</footer>
+<script>
+function openM(){document.getElementById('bookM').style.display='flex'}
+function closeM(){document.getElementById('bookM').style.display='none'}
+</script>
+</body>
+</html>
